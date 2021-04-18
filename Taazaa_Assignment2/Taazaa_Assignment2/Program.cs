@@ -26,19 +26,22 @@ namespace Taazaa_Assignment2
 
             Start3:
             Console.WriteLine("Select Category || Product || Exit : ");
-            string input1 = Console.ReadLine();
-            string choice = input1.ToUpper();
+            string choice = Console.ReadLine();
             Console.WriteLine("");
 
-            switch (choice)
+
+            switch (choice.ToUpper())
             {
                 case "CATEGORY":
                     goto Start1;
+                    
                 case "PRODUCT":
                     goto Start2;
+
                 case "Exit":
                     Console.WriteLine("Thankyou !!");
                     break;
+
                 default:
                     Console.WriteLine("Your choice {0} is not valid.Please try again!", choice);
                     goto Start3;

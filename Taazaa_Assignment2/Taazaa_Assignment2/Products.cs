@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
 
 namespace Taazaa_Assignment2
@@ -7,18 +6,18 @@ namespace Taazaa_Assignment2
     public class Products
     {
         private int _id { get; set; }
-        public string Name { get; set; }
+        public string ProductName { get; set; }
         public string Manufacturer { get; set; }
         public string ShortCode { get; set; }
 
-        public Categories Category { get; }
+        //public Categories Category { get; }
         public string Description { get; set; }
-        public int SellingPrice { get;  }
+        public int SellingPrice { get; set; }
 
 
 
 
-        public int ID
+        public int ProductID
         {
 
             set
@@ -31,11 +30,12 @@ namespace Taazaa_Assignment2
             }
         }
 
-        public void print()
-        {
-            Console.WriteLine("products here!");
-        }
+       
 
+
+
+         //ProductDetails = (from item in Products select new Products() 
+         //       { ProductId = item.ProductID, ProductName = item.ProductName }).ToList() };
         
     }
 }

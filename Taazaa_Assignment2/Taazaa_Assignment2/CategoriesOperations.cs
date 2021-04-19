@@ -67,8 +67,8 @@ namespace Taazaa_Assignment2
             public static void DeleteCategory()
             {
                 ListOfAllCategories();
-                Console.WriteLine("a. Delete By ID");
-                Console.WriteLine("b. Delete By Short Code");
+                Console.WriteLine("a. Enter ID");
+               
                 char ch2 = Convert.ToChar(Console.ReadLine());
                 switch (ch2)
                 {
@@ -77,11 +77,7 @@ namespace Taazaa_Assignment2
                         int a = Convert.ToInt32(Console.ReadLine());
                         DeleteById(a);
                         break;
-                    case 'b':
-                        Console.WriteLine("Enter Short Code of Category to Delete");
-                        var sc = Console.ReadLine();
-                        DeleteByShortCode(sc);
-                        break;
+                   
                 }
 
             }
@@ -107,26 +103,26 @@ namespace Taazaa_Assignment2
 
 
             }
-            public static void DeleteByShortCode(string shortCode)
-            {
-                bool flag = false;
-                categories.ForEach((i) =>
-                {
-                    if (i.CategoryShortCode == shortCode)
-                    {
-                        categories.Remove(i);
-                        ListOfAllCategories();
-                    }
-                    else
-                    {
-                        flag = true;
-                    }
-                });
-                if (flag)
-                {
-                    Console.WriteLine("Short Code not Found");
-                }
-            }
+            //public static void DeleteByShortCode(string shortCode)
+            //{
+            //    bool flag = false;
+            //    categories.ForEach((i) =>
+            //    {
+            //        if (i.CategoryShortCode == shortCode)
+            //        {
+            //            categories.Remove(i);
+            //            ListOfAllCategories();
+            //        }
+            //        else
+            //        {
+            //            flag = true;
+            //        }
+            //    });
+            //    if (flag)
+            //    {
+            //        Console.WriteLine("Short Code not Found");
+            //    }
+            //}
 
             public static void SearchCategory()
             {

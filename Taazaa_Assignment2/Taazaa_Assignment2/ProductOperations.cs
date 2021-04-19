@@ -15,6 +15,7 @@ namespace Taazaa_Assignment2
         public ProductOperations()
         {
             this.ProductList = new List<ProductStore>();
+            
         }
 
 
@@ -22,9 +23,10 @@ namespace Taazaa_Assignment2
         public void GetProduct()
         {
             ProductStore p = new ProductStore();
-            Console.WriteLine( p.ProductID);
-            var a = p.GetProducts();
-            foreach (var i in a)
+            
+            var a = new ProductStore();
+
+            foreach (var i in a.Products)
             {
                 Console.WriteLine(i);
             }
@@ -37,7 +39,7 @@ namespace Taazaa_Assignment2
         {
             //public static List<Products> CompleteList = new List<Products>();
 
-            Console.WriteLine("ID",ProductID);
+            Console.WriteLine("ID  {0} ",ProductID);
             Console.WriteLine("Enter Name");
             string n = Console.ReadLine();
             Console.WriteLine("Enter Manufacturer");
@@ -58,7 +60,6 @@ namespace Taazaa_Assignment2
         public void SearchById(int id)
         {
 
-      
             ProductStore prod = new ProductStore();
           
             var byid = this.ProductList.Find(res => res.ProductID == id);
@@ -72,12 +73,12 @@ namespace Taazaa_Assignment2
 
 
 
-            Console.WriteLine(" ProductID = 1");
+            Console.WriteLine("ProductID = 1");
             Console.WriteLine("ProductName = Laptop");
-            Console.WriteLine("  Manufacturer = Lenovo");
-            Console.WriteLine(" ShortCode = qwe");
-            Console.WriteLine(" Description = RAM : 8gb, CORE : I3");
-            Console.WriteLine("  SellingPrice = 50000");
+            Console.WriteLine("Manufacturer = Lenovo");
+            Console.WriteLine("ShortCode = qwe");
+            Console.WriteLine("Description = RAM : 8gb, CORE : I3");
+            Console.WriteLine("SellingPrice = 50000");
 
             
 

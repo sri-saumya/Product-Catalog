@@ -8,10 +8,11 @@ namespace Taazaa_Assignment2
         {
 
             ProductOperations po = new ProductOperations();
+            CategoryOperation co = new CategoryOperation();
             ProductStore ps = new ProductStore();
 
             Catalogagain:
-            Console.WriteLine("Select :  || Product || Exit : ");
+            Console.WriteLine("Select : CATEGORY|| Product || Exit : ");
             string choice = Console.ReadLine();
             Console.WriteLine("");
 
@@ -59,21 +60,41 @@ namespace Taazaa_Assignment2
             if (choice.ToUpper() == "CATEGORY")
 
             {
-                Console.WriteLine("Select : 1.GET all category || 2.SEARCH category by ID|| 3.ADD Category : ");
+                categoryagain:
+                Console.WriteLine("Select : 1.GET all category || 2.SEARCH category by ID|| 3.ADD Category || 4.Exit || 5.Back ");
                 string Pchoice = Console.ReadLine();
                 Console.WriteLine("");
 
                 if (Pchoice == "1")
                 {
-                    ps.GetProducts();
+                    CategoryOperation.ListOfAllCategories();
+                    goto categoryagain;
+
                 }
-                if (Pchoice == "2")
+                else if (Pchoice == "2")
                 {
-                    po.SearchById(1);
+                    CategoryOperation.SearchCategory();
+                    goto categoryagain;
                 }
-                if (Pchoice == "3")
+                else if (Pchoice == "3")
                 {
-                    po.AddProduct();
+                    Console.WriteLine("Enter name");
+                    var cn = Console.ReadLine();
+                    Console.WriteLine("Enter short code");
+                    var sc = Console.ReadLine();
+                    Console.WriteLine("Enter description");
+                    var d = Console.ReadLine();
+                    CategoryOperation.AddCategory(cn,sc,d);
+                }
+                else if (Pchoice == "4")
+                {
+                    Console.WriteLine("EXIT");
+                    goto Catalogagain;
+                }
+                else if (Pchoice == "5")
+                {
+                    Console.WriteLine("Please try again");
+                    goto categoryagain;
                 }
             }
 

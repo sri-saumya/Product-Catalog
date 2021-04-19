@@ -32,6 +32,9 @@ namespace Taazaa_Assignment2
             }
         }
 
-       
+       public Products()
+        {
+            ProductID += 1;
+        }
     }
 }

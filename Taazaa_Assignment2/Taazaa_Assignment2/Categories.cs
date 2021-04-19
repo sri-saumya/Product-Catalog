@@ -4,41 +4,25 @@ using System.Text;
 
 namespace Taazaa_Assignment2
 {
-    public class Categories
+
+
+    public class Category
     {
-        private int _id;
-        private string _shortcode;
-        public int ID
+        private static int ID = 1;
+        public int Category_ID { get; set; }
+        public static int GenerateCategoryId()
         {
-
-            set
-            {
-                
-                this._id = ID+1;
-            }
-            get
-            {
-                return this._id;
-            }
+            return ID++;
         }
+        public string Category_Name { get; set; }
+        public string CategoryShortCode { get; set; }
+        public string CategoryDescription { get; set; }
 
-        public string ShortCode
-        {
-            set
-            {
-                if (value.Length > 4)
-                {
-                    throw new Exception("Invalid code");
-                }
-                this._shortcode = value;
-            }
-            get
-            {
-                return this._shortcode;
-            }
-        }
 
-        public string Name { get; set; }
-        public string Desciption { get; set; }
     }
+
+
+
+
+    
 }

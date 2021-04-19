@@ -31,7 +31,9 @@ namespace Taazaa_Assignment2
                 }
                 else if (Pchoice == "2")
                 {
-                    po.SearchById(1);
+                    Console.WriteLine("Enter id : ");
+                    int id = Int32.Parse(Console.ReadLine());
+                    po.SearchById(id);
                     goto productagain;
                 }
                 else if (Pchoice == "3")
@@ -43,7 +45,6 @@ namespace Taazaa_Assignment2
                 {
                     Console.WriteLine("EXIT");
                     goto Catalogagain;
-
                 }
                 else if(Pchoice == "5")
                 {
@@ -52,6 +53,8 @@ namespace Taazaa_Assignment2
                 }
          
             }
+
+
 
             if (choice.ToUpper() == "CATEGORY")
 

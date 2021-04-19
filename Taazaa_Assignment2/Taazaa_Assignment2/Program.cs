@@ -27,7 +27,7 @@ namespace Taazaa_Assignment2
 
                 if(Pchoice == "1")
                 {
-                    ps.GetProducts();
+                    po.GetProduct();
                     goto productagain;
                 }
                 else if (Pchoice == "2")
@@ -61,7 +61,7 @@ namespace Taazaa_Assignment2
 
             {
                 categoryagain:
-                Console.WriteLine("Select : 1.GET all category || 2.SEARCH category by ID|| 3.ADD Category || 4.Delete category || 5.Exit || 6.Back ");
+                Console.WriteLine("Select : 1.GET all category || 2.SEARCH category || 3.ADD Category || 4.Delete category || 5.Exit || 6.Back ");
                 string Pchoice = Console.ReadLine();
                 Console.WriteLine("");
 

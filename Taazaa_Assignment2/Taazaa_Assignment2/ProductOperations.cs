@@ -6,32 +6,67 @@ namespace Taazaa_Assignment2
 {
     public class ProductOperations : ProductStore
     {
-        public List<ProductStore> ProductList { get; set; }
 
-        public static List<Products> CompleteList = new List<Products>();
-        public Products res;
+        public static List<Products> products = new List<Products>()
+            {
+            new Products()
+            {
+                    ProductID=Products.IncrementId(),
+                    ProductName = "Laptop",
+                    Manufacturer = "Lenovo",
+                    ShortCode = "qwe",
+                    Description = "RAM : 8gb, CORE : I3",
+                    SellingPrice = 50000
+
+
+
+            },
+            new Products()
+            {
+                   ProductID=Products.IncrementId(),
+                    ProductName = "Keyboard",
+                    Manufacturer = "Dell",
+                    ShortCode = "rty",
+                    Description = " Portable",
+                    SellingPrice = 2000
+
+
+            },
+            new Products()
+            {
+                    ProductID=Products.IncrementId(),
+                    ProductName = "Mouse",
+                    Manufacturer = "Dell",
+                    ShortCode = "hjk",
+                    Description = " Portable",
+                    SellingPrice = 20908
+
+
+            }
+        };
+
         
 
-        public ProductOperations()
-        {
-            this.ProductList = new List<ProductStore>();
-            
-        }
+        //public static List<Products> CompleteList = new List<Products>();
+        //public Products res;
+
+
 
 
         //show products
         public void GetProduct()
         {
-            ProductStore p = new ProductStore();
             
-            var a = new ProductStore();
-
-            foreach (var i in a.Products)
+            Console.WriteLine("ProductID\t\tName\t\tShortCode\t\tDescription");
+            Console.WriteLine(" ");
+            foreach (var item in products)
             {
-                Console.WriteLine(i);
+                Console.WriteLine(item.ProductID + "\t\t" + item.ProductName + "\t\t" + item.ShortCode + "\t\t\t" + item.Description);
             }
-
         }
+
+
+
 
 
         //Add new product
@@ -59,30 +94,29 @@ namespace Taazaa_Assignment2
         //Search new Product
         public void SearchById(int id)
         {
-
-            ProductStore prod = new ProductStore();
-          
-            var byid = this.ProductList.Find(res => res.ProductID == id);
-
-            Console.WriteLine(byid);
-
-
-
-
-
-
-
-
-            Console.WriteLine("ProductID = 1");
-            Console.WriteLine("ProductName = Laptop");
-            Console.WriteLine("Manufacturer = Lenovo");
-            Console.WriteLine("ShortCode = qwe");
-            Console.WriteLine("Description = RAM : 8gb, CORE : I3");
-            Console.WriteLine("SellingPrice = 50000");
-
+      
+                var d = products.FindAll((i) => i.ProductID == id);
+                if (d.Count > 0)
+                {
+                    d.ForEach((i) =>
+                    {
+                        Console.WriteLine($"{i.ProductID} \t\t {i.ProductName}\t\t{i.Manufacturer}\t\t{i.Description}\t\t{i.SellingPrice}");
+                    });
+                }
+                else
+                {
+                    Console.WriteLine("Id Not Found");
+                }
             
+
+            //ProductStore prod = new ProductStore();
+            //var byid = this.ProductList.Find(res => res.ProductID == id);
+            //Console.WriteLine(byid);
+
 
          
         }
+
+        
     }
 }

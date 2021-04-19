@@ -10,7 +10,7 @@ namespace Taazaa_Assignment2
     {
         private static int ID = 1;
         public int Category_ID { get; set; }
-        public static int GenerateCategoryId()
+        public static int IncreamentID()
         {
             return ID++;
         }

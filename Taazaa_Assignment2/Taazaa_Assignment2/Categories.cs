@@ -14,7 +14,7 @@ namespace Taazaa_Assignment2
             set
             {
                 
-                this._id = value;
+                this._id = ID+1;
             }
             get
             {

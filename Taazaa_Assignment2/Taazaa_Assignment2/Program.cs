@@ -7,47 +7,72 @@ namespace Taazaa_Assignment2
         static void Main(string[] args)
         {
 
-            Start1:
-            Console.WriteLine("Categories here!");
-            Categories C1 = new Categories();
-            C1.ID = 101;
-            C1.Name = "RIYA";
-            C1.ShortCode = "ABC";
-            Console.WriteLine("id = {0}  Name = {1}  Code = {2}", C1.ID, C1.Name, C1.ShortCode);
-            Console.WriteLine("");
+            ProductOperations po = new ProductOperations();
+            ProductStore ps = new ProductStore();
 
-
-
-            Start2:
-            Console.WriteLine("Products here!");
-            Products p = new Products();
-            Console.WriteLine("");
-
-
-            Start3:
-            Console.WriteLine("Select Category || Product || Exit : ");
+            Catalogagain:
+            Console.WriteLine("Select :  || Product || Exit : ");
             string choice = Console.ReadLine();
             Console.WriteLine("");
 
 
-            switch (choice.ToUpper())
+            if (choice.ToUpper() == "PRODUCT" )
+
             {
-                case "CATEGORY":
-                    goto Start1;
-                    
-                case "PRODUCT":
-                    goto Start2;
+                productagain:
+                Console.WriteLine("Select : 1.GET all products || 2.SEARCH product by ID|| 3.ADD product || 4.Exit || 5.Back");
+                string Pchoice = Console.ReadLine();
+                Console.WriteLine("");
 
-                case "Exit":
-                    Console.WriteLine("Thankyou !!");
-                    break;
+                if(Pchoice == "1")
+                {
+                    ps.GetProducts();
+                    goto productagain;
+                }
+                else if (Pchoice == "2")
+                {
+                    po.SearchById(1);
+                    goto productagain;
+                }
+                else if (Pchoice == "3")
+                {
+                    po.AddProduct();
+                    goto productagain;
+                }
+                else if (Pchoice == "4")
+                {
+                    Console.WriteLine("EXIT");
+                    goto Catalogagain;
 
-                default:
-                    Console.WriteLine("Your choice {0} is not valid.Please try again!", choice);
-                    goto Start3;
-
+                }
+                else if(Pchoice == "5")
+                {
+                    Console.WriteLine("Please try again");
+                    goto productagain;
+                }
+         
             }
 
+            if (choice.ToUpper() == "CATEGORY")
+
+            {
+                Console.WriteLine("Select : 1.GET all category || 2.SEARCH category by ID|| 3.ADD Category : ");
+                string Pchoice = Console.ReadLine();
+                Console.WriteLine("");
+
+                if (Pchoice == "1")
+                {
+                    ps.GetProducts();
+                }
+                if (Pchoice == "2")
+                {
+                    po.SearchById(1);
+                }
+                if (Pchoice == "3")
+                {
+                    po.AddProduct();
+                }
+            }
 
 
         }

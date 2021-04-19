@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Taazaa_Assignment2
 {
-    class CategoriesDetails
+     public class CategoriesDetails
     {
     }
 }

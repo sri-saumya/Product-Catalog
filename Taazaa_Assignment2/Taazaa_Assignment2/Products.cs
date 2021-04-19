@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace Taazaa_Assignment2
@@ -10,7 +11,8 @@ namespace Taazaa_Assignment2
         public string Manufacturer { get; set; }
         public string ShortCode { get; set; }
 
-        //public Categories Category { get; }
+        public List<CategoriesDetails> Category;
+
         public string Description { get; set; }
         public int SellingPrice { get; set; }
 
@@ -22,7 +24,7 @@ namespace Taazaa_Assignment2
 
             set
             {
-                this._id = value;
+                this._id = ProductID + 1;
             }
             get
             {
@@ -31,11 +33,5 @@ namespace Taazaa_Assignment2
         }
 
        
-
-
-
-         //ProductDetails = (from item in Products select new Products() 
-         //       { ProductId = item.ProductID, ProductName = item.ProductName }).ToList() };
-        
     }
 }

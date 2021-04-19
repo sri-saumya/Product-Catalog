@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Taazaa_Assignment2
 {
-    public class ProductStore
+    public class ProductStore : Products
     {
         public List<Products> GetProducts()
         {
@@ -34,6 +34,8 @@ namespace Taazaa_Assignment2
 
 
             };
+
+            a.ForEach(item => Console.WriteLine(item));
             return a;
         }
 

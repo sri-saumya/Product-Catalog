@@ -8,10 +8,7 @@ export class SCategoryService {
 
   constructor() { }
 
-
-  getProducts() : ICategory[]
- {
-    return[
+  cat : ICategory[]=[
     {
       Category_ID :1,
       Category_Name : "Grocery",
@@ -36,6 +33,13 @@ export class SCategoryService {
       CategoryShortCode : "104",
       CategoryDescription : "Well Satisfied"
     },
-    ]
+  ]
+
+  getProducts() : ICategory[]
+ {
+
+  return this.cat;
+
+    
   }
 }

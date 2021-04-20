@@ -9,7 +9,10 @@
 
 
 
-
+<input type="number" placeholder="Enter Id" [(ngModel)]="x" />
+<button  class="btn btn-dark " (click) = "delete()">Delete</button>
+<br>
+<br>
 
 <div class="container">
 
@@ -40,9 +43,9 @@
                 <button type="reset" class="btn btn-danger btn-block" (click) = "clear()">CLEAR</button>
                 </div>
                 <div class="col-md-4">
-                    <button  class="btn btn-dark btn-block" (click) = "delete()">Delete</button>
+                    <!-- <button  class="btn btn-dark btn-block" (click) = "delete()">Delete</button>
                     <br/>
-                    <input class="form-control" placeholder="enter id to delete" formControlName= "deleteid"/> 
+                    <input class="form-control" placeholder="enter id to delete" formControlName= "deleteid"/>  -->
                     </div>
                 </div>
                 

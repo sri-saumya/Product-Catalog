@@ -8,10 +8,7 @@ export class SProductService {
 
   constructor() { }
 
-
-  getProducts() : IProduct[]
- {
-    return[
+  pro : IProduct[]=[
     {
       ProductID :1,
       ProductName : "Laptop",
@@ -61,7 +58,13 @@ export class SProductService {
       SellingPrice : 200
     },
     
-    ]
+  ]
+
+  getProducts() : IProduct[]
+  {
+    return this.pro;
+   
+    
   }
 
 }

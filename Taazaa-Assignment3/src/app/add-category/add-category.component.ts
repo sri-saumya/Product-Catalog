@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+
 import { ICategory } from '../category/ICategory';
+import { SCategoryService } from '../scategory.service';
 
 @Component({
   selector: 'app-add-category',
@@ -9,8 +11,9 @@ import { ICategory } from '../category/ICategory';
 })
 export class AddCategoryComponent implements OnInit {
 
-  constructor() { }
+  constructor(private SCategory:SCategoryService ) { }
 
+  x:number;
 
   product : ICategory[]=[];
   productForm= new FormGroup({
@@ -29,26 +32,32 @@ export class AddCategoryComponent implements OnInit {
    var x: ICategory={
     Category_ID : this.productForm.controls['Category_ID'].value,
     Category_Name:this.productForm.controls['Category_Name'].value,
-   
     CategoryShortCode:this.productForm.controls['CategoryShortCode'].value,
     CategoryDescription: this.productForm.controls['CategoryDescription'].value,
     
    };
 
    this.product.push(x);
+   this.senddata();
 
   }
+
+  senddata(){
+    this.SCategory.cat.push({
+    Category_ID : this.productForm.controls['Category_ID'].value,
+    Category_Name:this.productForm.controls['Category_Name'].value,
+    CategoryShortCode:this.productForm.controls['CategoryShortCode'].value,
+    CategoryDescription: this.productForm.controls['CategoryDescription'].value,
+    })
+  }
   
+
+
   delete()
   {
-    var x: number= this.productForm.controls['deleteid'].value;
-     this.product.forEach((item,i)=> {
-       if(item.Category_ID==x)
-       {
-        this.product.splice(i,1);
-       }
-       
-     });
+   
+    this.SCategory.cat = this.SCategory.cat.filter(item => item.Category_ID !== this.x );
+   
   
   }
 

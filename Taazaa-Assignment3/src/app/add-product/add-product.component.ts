@@ -1,7 +1,9 @@
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { IProduct } from '../product/IProduct';
+import { SProductService } from '../sproduct.service';
+
 
 @Component({
   selector: 'app-add-product',
@@ -10,7 +12,9 @@ import { IProduct } from '../product/IProduct';
 })
 export class AddProductComponent implements OnInit {
 
-  constructor() { }
+  constructor(private SProduct : SProductService) { }
+
+  x : number;
 
   product : IProduct[]=[];
   productForm= new FormGroup({
@@ -38,20 +42,27 @@ export class AddProductComponent implements OnInit {
    };
    this.product.push(x);
   
-    
+    this.senddata();
     
  
   }
 
-  delete(){
-    var x : number = this.productForm.controls['deleteid'].value;
-    this.product.forEach((item,i) => {
-      if(item.ProductID==x)
-      {
-        this.product.splice(i,1);
+  senddata(){
+    this.SProduct.pro.push({
+    ProductID : this.productForm.controls['ProductID'].value,
+    ProductName:this.productForm.controls['ProductName'].value,
+    Manufacturer:this.productForm.controls['Manufacturer'].value,
+    SellingPrice:this.productForm.controls['SellingPrice'].value,
+    ShortCode: this.productForm.controls['ShortCode'].value,
+    Description:this.productForm.controls['Description'].value,
+    
 
-      }
-    });
+    })
+  }
+
+  delete(){
+    this.SProduct.pro = this.SProduct.pro.filter(item => item.ProductID !== this.x );
+    
     
   }
 

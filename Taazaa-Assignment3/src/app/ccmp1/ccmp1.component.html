@@ -1,0 +1,60 @@
+
+
+<div class = 'row'>
+    <div class="col-md-2"></div>
+
+    <div class="col-md-8">
+    
+    <form (ngSubmit)='updateCategory()' [formGroup] = "categoryform" novalidate class ="form">
+        
+    <h4 class="text-info">CategoryID</h4>
+    <input formControlName='Category_ID'
+            type='text'
+            class='form-control'/>
+            <div class ="alert alert-danger" *ngIf="!categoryform?.get('Category_ID')?.valid && categoryform?.get('Category_ID')?.touched">
+                ID is Required
+            </div>
+       
+    
+    <br>
+    <h4 class="text-info">Category Name</h4>
+    <input formControlName='Category_Name'
+        type='text'
+        class='form-control' />
+        <div class ="alert alert-danger" *ngIf="!categoryform?.get('Category_Name')?.valid && categoryform?.get('Category_Name')?.touched">
+            Title is Required
+        </div>
+    
+    
+
+    <br>
+    <h4 class="text-info">Category ShortCode</h4>
+    <input formControlName='CategoryShortCode'
+        type='text'
+        class='form-control'/>
+        <div class ="alert alert-danger" *ngIf="!categoryform?.get('CategoryShortCode')?.valid && categoryform?.get('CategoryShortCode')?.touched">
+            ExpiryDate is Required
+        </div>
+    
+
+        <br>
+        <h4 class="text-info">Category Description</h4>
+        <input formControlName='CategoryDescription'
+            type='text'
+            class='form-control'/>
+            <div class ="alert alert-danger" *ngIf="!categoryform?.get('CategoryDescription')?.valid && categoryform?.get('CategoryDescription')?.touched">
+                CategoryDescription is Required
+            </div>
+        
+    
+
+
+    <br>
+    <button [disabled] = 'categoryform.invalid' class="btn btn-primary btn-block">Add</button>
+    <br>
+    <br>
+    </form>
+    </div>
+
+    <div class="col-md-2"></div>
+</div>

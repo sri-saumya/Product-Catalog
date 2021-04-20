@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddCategoryComponent } from './add-category/add-category.component';
+import { AddProductComponent } from './add-product/add-product.component';
 import { CategoryComponent } from './category/category.component';
 import { DisplayCategoryComponent } from './display-category/display-category.component';
 import { DisplayProductComponent } from './display-product/display-product.component';
@@ -14,8 +16,12 @@ const routes: Routes = [
   {path  : 'category' , component : CategoryComponent },
   {path  : 'displaycategory' , component : DisplayCategoryComponent },
   {path  : 'searchcategory' , component : SearchCategoryComponent },
+  {path  : 'addcategory' , component : AddCategoryComponent },
+  
   {path  : 'searchproduct' , component : SearchProductComponent },
   {path  : 'displayproduct' , component : DisplayProductComponent },
+  {path  : 'addproduct' , component : AddProductComponent },
+  
   
   
   {path  : '' , redirectTo :'home',pathMatch :'full'  }

@@ -18,10 +18,8 @@ import { PsearchbyidPipe } from './psearchbyid.pipe';
 import { PsearchbypricePipe } from './psearchbyprice.pipe';
 import { AddCategoryComponent } from './add-category/add-category.component';
 import { AddProductComponent } from './add-product/add-product.component';
-import { Pcmp1Component } from './pcmp1/pcmp1.component';
-import { Pcmp2Component } from './pcmp2/pcmp2.component';
-import { Ccmp1Component } from './ccmp1/ccmp1.component';
-import { Ccmp2Component } from './ccmp2/ccmp2.component';
+
+
 
 @NgModule({
   declarations: [
@@ -40,10 +38,8 @@ import { Ccmp2Component } from './ccmp2/ccmp2.component';
     PsearchbypricePipe,
     AddCategoryComponent,
     AddProductComponent,
-    Pcmp1Component,
-    Pcmp2Component,
-    Ccmp1Component,
-    Ccmp2Component
+    
+  
   ],
   imports: [
     BrowserModule,

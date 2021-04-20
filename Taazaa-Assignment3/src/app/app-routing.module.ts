@@ -12,17 +12,22 @@ import { SearchProductComponent } from './search-product/search-product.componen
 
 const routes: Routes = [
   {path  : 'home' , component : HomeComponent },
-  {path  : 'product' , component : ProductComponent },
-  {path  : 'category' , component : CategoryComponent },
+  
+  {path  : 'category' , component : CategoryComponent ,children: 
+[
   {path  : 'displaycategory' , component : DisplayCategoryComponent },
   {path  : 'searchcategory' , component : SearchCategoryComponent },
   {path  : 'addcategory' , component : AddCategoryComponent },
+]
+},
+  {path  : 'product' , component : ProductComponent ,children:[
+
   
   {path  : 'searchproduct' , component : SearchProductComponent },
   {path  : 'displayproduct' , component : DisplayProductComponent },
   {path  : 'addproduct' , component : AddProductComponent },
   
-  
+]},
   
   {path  : '' , redirectTo :'home',pathMatch :'full'  }
 ];

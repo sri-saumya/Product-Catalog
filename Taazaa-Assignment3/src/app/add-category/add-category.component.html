@@ -6,5 +6,82 @@
 <br>
 <br>
 <br>
-<app-ccmp1></app-ccmp1>
-<app-ccmp2></app-ccmp2>
+
+
+
+
+
+<div class="container">
+
+    
+    <div class="row">
+        
+        <div class="col-md-6">
+            <form [formGroup]="productForm" class="form">
+                <h6 class=" text-warning">P_Id</h6>
+                <input type="number" class="form-control" placeholder="Enter Id" formControlName= "Category_ID">
+
+                <h6 class=" text-warning">P_Name</h6>
+                <input type="text" class="form-control" placeholder="Enter Name" formControlName= "Category_Name">
+
+                <h6 class=" text-warning">P_ShortCode</h6>
+                <input type="text" class="form-control" placeholder="Enter Short code length>4" formControlName= "CategoryShortCode">
+
+                <h6 class=" text-warning">P_Description</h6>
+                <input type="text" class="form-control" placeholder="Enter Manufacturer" formControlName= "CategoryDescription">
+
+              
+                <br/>
+                <div class="row">
+                    <div class="col-md-4">
+                <button type="submit" [disabled] = 'productForm.invalid' class="btn btn-dark btn-block" (click) = "add()" >ADD</button>
+                </div>
+                <div class="col-md-4">
+                <button type="reset" class="btn btn-danger btn-block" (click) = "clear()">CLEAR</button>
+                </div>
+                <div class="col-md-4">
+                    <button  class="btn btn-dark btn-block" (click) = "delete()">Delete</button>
+                    <br/>
+                    <input class="form-control" placeholder="enter id to delete" formControlName= "deleteid"/> 
+                    </div>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+           
+
+          <br/>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Category_ID</th>
+                        <th>Category_Name</th>
+                        <th>CategoryShortCode</th>
+                        <th>CategoryDescription</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let p of product">
+                        <td>{{p.Category_ID}}</td>
+                        <td>{{p.Category_Name}}</td>
+                        <td>{{p.CategoryShortCode}}</td>
+                        <td>{{p.CategoryDescription}}</td>
+                        
+
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+</div>
+
+
+
+
+

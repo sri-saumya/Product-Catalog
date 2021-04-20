@@ -1,15 +1,16 @@
 <p>Category</p>
 <div class="row">
     <div class="col-md-3">
-        <button routerLink ="/displaycategory" class="btn btn-dark btn-block"> DISPLAY CATEGORY</button>
+        <button routerLink ='/category/displaycategory' class="btn btn-dark btn-block"> DISPLAY CATEGORY</button>
                   
     </div>
     <div class="col-md-3">
-        <button routerLink ="/searchcategory" class="btn btn-dark btn btn-block ">SEARCH CATEGORY</button>
+        <button routerLink ="/category/searchcategory" class="btn btn-dark btn btn-block ">SEARCH CATEGORY</button>
     </div>
     <div class="col-md-3">
-        <button routerLink="/addcategory" class="btn btn-dark btn btn-block ">ADD CATEGORY</button>
+        <button routerLink="/category/addcategory" class="btn btn-dark btn btn-block ">ADD CATEGORY</button>
     </div>
 </div>
 
 
+<router-outlet></router-outlet>

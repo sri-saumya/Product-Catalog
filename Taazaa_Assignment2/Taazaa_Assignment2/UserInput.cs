@@ -26,13 +26,13 @@ namespace Taazaa_Assignment2
 
                 {
 
-                    Console.WriteLine("Select : 1.GET all products || 2.SEARCH product by ID|| 3.ADD product || 4.Exit || 5.Back");
+                    Console.WriteLine("Select : 1.GET all products || 2.SEARCH product by ID|| 3.ADD product || 4.DELETE product || 5.Exit");
                     string Pchoice = Console.ReadLine();
                     Console.WriteLine("");
 
                     if (Pchoice == "1")
                     {
-                        po.GetProduct();
+                        ProductOperations.GetProduct();
 
                     }
                     else if (Pchoice == "2")
@@ -57,7 +57,8 @@ namespace Taazaa_Assignment2
                     }
                     else if (Pchoice == "4")
                     {
-                        Console.WriteLine("EXIT From Product");
+                        ProductOperations.DeleteCategory();
+                        Console.WriteLine("Product Deleted");
 
                     }
                     else if (Pchoice == "5")
@@ -101,6 +102,8 @@ namespace Taazaa_Assignment2
                     }
                     else if (Pchoice == "4")
                     {
+                        //Console.WriteLine("Enter id");
+                        //int id = Convert.ToInt32(Console.ReadLine());
                         CategoryOperation.DeleteCategory();
                         Console.WriteLine("Category Deleted");
 
@@ -108,7 +111,7 @@ namespace Taazaa_Assignment2
                     else if (Pchoice == "5")
                     {
                         Console.WriteLine("EXIT from Category");
-                        //goto Catalogagain;
+                        
                     }
                     else if (Pchoice == "6")
                     {

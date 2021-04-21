@@ -10,7 +10,7 @@ namespace Taazaa_Assignment2
 
 
         //show products
-        public void GetProduct()
+        public static void GetProduct()
         {
             
             Console.WriteLine("ProductID\t\tName\t\tShortCode\t\tDescription");
@@ -60,10 +60,10 @@ namespace Taazaa_Assignment2
                 Category = productCategories,
 
             });
-            ListOfAllCategories();
+            ListOfProducts();
         }
 
-        public static void ListOfAllCategories()
+        public static void ListOfProducts()
         {
             Console.WriteLine("ProductID" + "\t" + "Product Name" + "\t\t" + "Product Short Code" + "\t" + "Product Description" + "\t" + "Product Selling Price" + "\t" + "Category" + "\n");
             products.ForEach((i) =>
@@ -74,7 +74,7 @@ namespace Taazaa_Assignment2
                         s += c.Category_Name + ", ";
                     });
 
-                Console.WriteLine($"{i.ProductID} \t\t {i.ProductName}\t\t\t {i.ShortCode}\t\t\t{i.Description}\t\t\t{i.SellingPrice}\t\t{s}");
+                Console.WriteLine($"{i.ProductID} \t\t {i.ProductName}\t\t\t {i.ShortCode}\t\t\t\t{i.Description}\t\t\t{i.SellingPrice}\t\t{s}");
             });
         }
 
@@ -103,6 +103,55 @@ namespace Taazaa_Assignment2
          
         }
 
+
+        public static void DeleteCategory()
+        {
+            ListOfProducts();
+            Console.WriteLine("a. Enter ID");
+
+            char ch2 = Convert.ToChar(Console.ReadLine());
+            switch (ch2)
+            {
+                case 'a':
+                    Console.WriteLine("Enter Id Number to delete");
+                    int a = Convert.ToInt32(Console.ReadLine());
+                    DeleteById(a);
+                    break;
+
+            }
+
+        }
+        public static void DeleteById(int id)
+        {
+            bool flag = false;
+            products.ForEach((i) =>
+            {
+                if (i.ProductID == id)
+                {
+                    ListOfProducts();
+                    ProductOperations.GetProduct();
+                    products.Remove(i);
+                    ListOfProducts();
+                    ProductOperations.GetProduct();
+
+
+                }
+                else
+                {
+                    flag = true;
+                }
+            });
+            if (flag)
+            {
+                Console.WriteLine("Id not Found");
+            }
+
         
+        }
+
+      
+
+
+
     }
 }

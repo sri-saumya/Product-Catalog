@@ -9,13 +9,7 @@ namespace Taazaa_Assignment2
 
         {
 
-            public static void CategoryOperationMenu()
-            {
 
-                char ch1 = Convert.ToChar(Console.ReadLine());
-
-              
-            }
 
             public static void AddCategory(string categoryName, string shortCode, string desc)
             {
@@ -40,48 +34,49 @@ namespace Taazaa_Assignment2
                 });
             }
 
-            public static void DeleteCategory()
+        public static void DeleteCategory()
+        {
+            ListOfAllCategories();
+            Console.WriteLine("a. Enter ID");
+
+            char ch2 = Convert.ToChar(Console.ReadLine());
+            switch (ch2)
             {
-                ListOfAllCategories();
-                Console.WriteLine("a. Enter ID");
-               
-                char ch2 = Convert.ToChar(Console.ReadLine());
-                switch (ch2)
-                {
-                    case 'a':
-                        Console.WriteLine("Enter Id Number to delete");
-                        int a = Convert.ToInt32(Console.ReadLine());
-                        DeleteById(a);
-                        break;
-                   
-                }
+                case 'a':
+                    Console.WriteLine("Enter Id Number to delete");
+                    int a = Convert.ToInt32(Console.ReadLine());
+                    DeleteById(a);
+                    break;
 
             }
-            public static void DeleteById(int id)
+
+        }
+        public static void DeleteById(int id)
+        {
+            bool flag = false;
+            categories.ForEach((i) =>
             {
-                bool flag = false;
-                categories.ForEach((i) =>
+                if (i.Category_ID == id)
                 {
-                    if (i.Category_ID == id)
-                    {
-                        categories.Remove(i);
-                        ListOfAllCategories();
-                    }
-                    else
-                    {
-                        flag = true;
-                    }
-                });
-                if (flag)
-                {
-                    Console.WriteLine("Id not Found");
+                    categories.Remove(i);
+                    ListOfAllCategories();
                 }
-
-
+                else
+                {
+                    flag = true;
+                }
+            });
+            if (flag)
+            {
+                Console.WriteLine("Id not Found");
             }
-    
 
-            public static void SearchCategory()
+
+        }
+
+
+
+        public static void SearchCategory()
             {
                 Console.WriteLine("a : Give ID");
                 Console.WriteLine("b : Give Name");

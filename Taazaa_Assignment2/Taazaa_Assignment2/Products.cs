@@ -12,7 +12,7 @@ namespace Taazaa_Assignment2
         public string Manufacturer { get; set; }
         public string ShortCode { get; set; }
 
-       // public List<CategoryOperation> Category;
+       public List<Category> Category;
 
         public string Description { get; set; }
         public int SellingPrice { get; set; }
@@ -24,25 +24,13 @@ namespace Taazaa_Assignment2
             return ID++;
         }
 
+        public Products()
+        {
+            this.Category = new List<Category>();
+        }
 
 
 
-        // public int ProductID
-        // {
-
-        //     set
-        //     {
-        //         this._id = ProductID + 1;
-        //     }
-        //     get
-        //     {
-        //         return this._id;
-        //     }
-        // }
-
-        //public Products()
-        // {
-        //     ProductID += 1;
-        // }
+      
     }
 }

@@ -8,6 +8,8 @@ namespace Taazaa_Assignment2
     {
         public static void input()
         {
+            Console.WriteLine("                    PRODUCT  CATALOG");
+            Console.WriteLine("");
 
             ProductOperations po = new ProductOperations();
             CategoryOperation co = new CategoryOperation();
@@ -17,7 +19,7 @@ namespace Taazaa_Assignment2
             while (true)
             {
 
-                Console.WriteLine("Select : CATEGORY|| Product || Exit : ");
+                Console.WriteLine("ENTER : CATEGORY || Product || Exit : ");
                 string choice = Console.ReadLine();
                 Console.WriteLine("");
 
@@ -26,7 +28,7 @@ namespace Taazaa_Assignment2
 
                 {
 
-                    Console.WriteLine("Select : 1.GET all products || 2.SEARCH product by ID|| 3.ADD product || 4.DELETE product || 5.Exit");
+                    Console.WriteLine("Select(1,2,3,4,5) : 1.GET all products || 2.SEARCH product by ID|| 3.ADD product || 4.DELETE product || 5.Exit");
                     string Pchoice = Console.ReadLine();
                     Console.WriteLine("");
 
@@ -46,13 +48,30 @@ namespace Taazaa_Assignment2
                     {
                         Console.WriteLine("Enter name");
                         var cn = Console.ReadLine();
+
                         Console.WriteLine("Enter short code");
+
                         var sc = Console.ReadLine();
-                        Console.WriteLine("Enter description");
-                        var d = Console.ReadLine();
-                        Console.WriteLine("Enter selling price");
-                        var s = Int32.Parse(Console.ReadLine());
-                        ProductOperations.AddProduct(cn, sc, d, s);
+                        if (sc.Length <= 4)
+                        {
+                            Console.WriteLine("Enter description");
+                            var d = Console.ReadLine();
+                            Console.WriteLine("Enter selling price");
+                            var s = Int32.Parse(Console.ReadLine());
+                            if (s > 0)
+                            {
+                                ProductOperations.AddProduct(cn, sc, d, s);
+                            }
+                            else
+                            {
+                                Console.WriteLine("Selling Price Code Should be > 0");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("Source Code Should be <= 4");
+                        }
+
 
                     }
                     else if (Pchoice == "4")
@@ -75,7 +94,7 @@ namespace Taazaa_Assignment2
 
                 {
 
-                    Console.WriteLine("Select : 1.GET all category || 2.SEARCH category || 3.ADD Category || 4.Delete category || 5.Exit || 6.Back ");
+                    Console.WriteLine("Select(1,2,3,4,5) : 1.GET all category || 2.SEARCH category || 3.ADD Category || 4.Delete category || 5.Exit  ");
                     string Pchoice = Console.ReadLine();
                     Console.WriteLine("");
 
@@ -113,11 +132,13 @@ namespace Taazaa_Assignment2
                         Console.WriteLine("EXIT from Category");
                         
                     }
-                    else if (Pchoice == "6")
-                    {
-                        Console.WriteLine("Please try again");
+                   
+                }
 
-                    }
+                if (choice.ToUpper() == "EXIT")
+                {
+                    Console.WriteLine("THANKYOU  !!");
+                    break;
                 }
 
 

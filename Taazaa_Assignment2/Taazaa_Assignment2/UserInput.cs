@@ -57,7 +57,7 @@ namespace Taazaa_Assignment2
                     }
                     else if (Pchoice == "4")
                     {
-                        ProductOperations.DeleteCategory();
+                        ProductOperations.DeleteProduct();
                         Console.WriteLine("Product Deleted");
 
                     }
@@ -102,8 +102,8 @@ namespace Taazaa_Assignment2
                     }
                     else if (Pchoice == "4")
                     {
-                        //Console.WriteLine("Enter id");
-                        //int id = Convert.ToInt32(Console.ReadLine());
+                      
+                        
                         CategoryOperation.DeleteCategory();
                         Console.WriteLine("Category Deleted");
 

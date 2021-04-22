@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Taazaa_Assignment2
@@ -8,8 +9,6 @@ namespace Taazaa_Assignment2
         public class CategoryOperation : CategoryStore
 
         {
-
-
 
             public static void AddCategory(string categoryName, string shortCode, string desc)
             {
@@ -34,67 +33,64 @@ namespace Taazaa_Assignment2
                 });
             }
 
+
+
+
+
         public static void DeleteCategory()
         {
-            ListOfAllCategories();
-            Console.WriteLine("a. Enter ID");
+            Console.WriteLine("Please select an option to delete");
+            Console.Write("1. Give id\t");
+            Console.WriteLine(" ");
+            Console.WriteLine("2. Give Short Code\t");
+            Console.WriteLine(" ");
 
-            char ch2 = Convert.ToChar(Console.ReadLine());
-            switch (ch2)
+
+
+            int choice = Convert.ToInt32(Console.ReadLine());
+            if (choice == 1)
             {
-                case 'a':
-                    Console.WriteLine("Enter Id Number to delete");
-                    int a = Convert.ToInt32(Console.ReadLine());
-                    DeleteById(a);
-                    break;
+                Console.WriteLine("Enter Id :");
+                int id = Convert.ToInt32(Console.ReadLine());
 
+
+
+                categories.RemoveAt(id - 1);
             }
-
-        }
-        public static void DeleteById(int id)
-        {
-            bool flag = false;
-            categories.ForEach((i) =>
+            else if (choice == 2)
             {
-                if (i.Category_ID == id)
-                {
-                    categories.Remove(i);
-                    ListOfAllCategories();
-                }
-                else
-                {
-                    flag = true;
-                }
-            });
-            if (flag)
-            {
-                Console.WriteLine("Id not Found");
+                Console.WriteLine("Enter Short Code : ");
+                string shortcode = Console.ReadLine();
+                var producttoremove = categories.Single(r => r.CategoryShortCode == shortcode);
+                categories.Remove(producttoremove);
             }
 
 
-        }
 
+        }
+     
 
 
         public static void SearchCategory()
             {
-                Console.WriteLine("a : Give ID");
-                Console.WriteLine("b : Give Name");
-                Console.WriteLine("c : Give Short Code");
-                char ch3 = Convert.ToChar(Console.ReadLine());
+                Console.WriteLine("1 : Give ID");
+                Console.WriteLine("2 : Give Name");
+                Console.WriteLine("3 : Give Short Code");
+               
+                int ch3 = Convert.ToInt32(Console.ReadLine());
                 switch (ch3)
                 {
-                    case 'a':
+                    case 1:
                         Console.WriteLine("Enter Id : ");
                         int a = Convert.ToInt32(Console.ReadLine());
                         SearchByID(a);
                         break;
-                    case 'b':
+                    case 2:
                         Console.WriteLine("Enter Name : ");
                         var name = Console.ReadLine();
                         SearchByName(name);
                         break;
-                    case 'c':
+                    case 3:
                         Console.WriteLine("Enter Short Code : ");
                         var sc = Console.ReadLine();
                         SearchByShortCode(sc);

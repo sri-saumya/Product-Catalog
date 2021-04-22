@@ -7,6 +7,7 @@ namespace Taazaa_Assignment2
 {
     public class ProductOperations : ProductStore
     {
+      
 
 
         //show products
@@ -97,61 +98,41 @@ namespace Taazaa_Assignment2
                 {
                     Console.WriteLine("Id Not Found");
                 }
-            
-
-
          
         }
 
 
-        public static void DeleteCategory()
+        public static void DeleteProduct()
         {
-            ListOfProducts();
-            Console.WriteLine("a. Enter ID");
+            Console.WriteLine("Please select an option to delete");
+            Console.Write("1. delete by Id\t");
+            Console.WriteLine(" ");
+            Console.WriteLine("2. delete by Short Code\t");
+            Console.WriteLine(" ");
 
-            char ch2 = Convert.ToChar(Console.ReadLine());
-            switch (ch2)
+
+
+            int choice = Convert.ToInt32(Console.ReadLine());
+            if (choice == 1)
             {
-                case 'a':
-                    Console.WriteLine("Enter Id Number to delete");
-                    int a = Convert.ToInt32(Console.ReadLine());
-                    DeleteById(a);
-                    break;
+                Console.WriteLine("Enter product id to delete the product");
+                int id = Convert.ToInt32(Console.ReadLine());
 
+
+
+                products.RemoveAt(id - 1);
+            }
+            else if (choice == 2)
+            {
+                Console.WriteLine("Enter product short code to delete the product");
+                string shortcode = Console.ReadLine();
+                var producttoremove = products.Single(r => r.ShortCode == shortcode);
+                products.Remove(producttoremove);
             }
 
+
+
         }
-        public static void DeleteById(int id)
-        {
-            bool flag = false;
-            products.ForEach((i) =>
-            {
-                if (i.ProductID == id)
-                {
-                    ListOfProducts();
-                    ProductOperations.GetProduct();
-                    products.Remove(i);
-                    ListOfProducts();
-                    ProductOperations.GetProduct();
-
-
-                }
-                else
-                {
-                    flag = true;
-                }
-            });
-            if (flag)
-            {
-                Console.WriteLine("Id not Found");
-            }
-
-        
-        }
-
-      
-
-
 
     }
 }

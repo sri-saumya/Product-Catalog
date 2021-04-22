@@ -13,7 +13,7 @@ namespace Taazaa_Assignment2
             {
             new Products()
             {
-                    ProductID = 1,
+                    ProductID = Products.IncrementId(),
                     Name = "Laptop",
                     Manufacturer = "Lenovo",
                     ShortCode = "qwe",
@@ -23,7 +23,7 @@ namespace Taazaa_Assignment2
             },
             new Products()
             {
-                    ProductID = 2,
+                    ProductID = Products.IncrementId(),
                     Name = "Keyboard",
                     Manufacturer = "Dell",
                     ShortCode = "rty",

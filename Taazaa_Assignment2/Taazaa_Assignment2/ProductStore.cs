@@ -14,7 +14,7 @@ namespace Taazaa_Assignment2
             new Products()
             {
                     ProductID = 1,
-                    ProductName = "Laptop",
+                    Name = "Laptop",
                     Manufacturer = "Lenovo",
                     ShortCode = "qwe",
                     Description = "RAM : 8gb, CORE : I3",
@@ -24,7 +24,7 @@ namespace Taazaa_Assignment2
             new Products()
             {
                     ProductID = 2,
-                    ProductName = "Keyboard",
+                    Name = "Keyboard",
                     Manufacturer = "Dell",
                     ShortCode = "rty",
                     Description = " Portable",

@@ -14,9 +14,9 @@ namespace Taazaa_Assignment2
         {
             return ID++;
         }
-        public string Category_Name { get; set; }
-        public string CategoryShortCode { get; set; }
-        public string CategoryDescription { get; set; }
+        public string Name { get; set; }
+        public string ShortCode { get; set; }
+        public string Description { get; set; }
 
 
     }

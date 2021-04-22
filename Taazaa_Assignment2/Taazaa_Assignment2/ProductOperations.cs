@@ -18,7 +18,7 @@ namespace Taazaa_Assignment2
             Console.WriteLine(" ");
             foreach (var item in products)
             {
-                Console.WriteLine(item.ProductID + "\t\t" + item.ProductName + "\t\t" + item.ShortCode + "\t\t\t" + item.Description);
+                Console.WriteLine(item.ProductID + "\t\t" + item.Name + "\t\t" + item.ShortCode + "\t\t\t" + item.Description);
             }
         }
 
@@ -32,7 +32,7 @@ namespace Taazaa_Assignment2
 
             CategoryOperation.categories.ForEach((i) =>
             {
-                Console.WriteLine(i.Category_ID + i.Category_Name);
+                Console.WriteLine(i.Category_ID + i.Name);
             });
             List<Category> productCategories = new List<Category>();
             string choice;
@@ -54,7 +54,7 @@ namespace Taazaa_Assignment2
             {
 
                 ProductID = Products.ID,
-                ProductName = pName,
+                Name = pName,
                 ShortCode = pCode,
                 Description = desc,
                 SellingPrice = sp,
@@ -72,10 +72,10 @@ namespace Taazaa_Assignment2
                
                     string s = "";
                     i.Category.ForEach(c => {
-                        s += c.Category_Name + ", ";
+                        s += c.Name + ", ";
                     });
 
-                Console.WriteLine($"{i.ProductID} \t\t {i.ProductName}\t\t\t {i.ShortCode}\t\t\t\t{i.Description}\t\t\t{i.SellingPrice}\t\t{s}");
+                Console.WriteLine($"{i.ProductID} \t\t {i.Name}\t\t\t {i.ShortCode}\t\t\t\t{i.Description}\t\t\t{i.SellingPrice}\t\t{s}");
             });
         }
 
@@ -91,7 +91,7 @@ namespace Taazaa_Assignment2
                 {
                     d.ForEach((i) =>
                     {
-                        Console.WriteLine($"{i.ProductID} \t\t {i.ProductName}\t\t{i.Manufacturer}\t\t{i.Description}\t\t{i.SellingPrice}");
+                        Console.WriteLine($"{i.ProductID} \t\t {i.Name}\t\t{i.Manufacturer}\t\t{i.Description}\t\t{i.SellingPrice}");
                     });
                 }
                 else

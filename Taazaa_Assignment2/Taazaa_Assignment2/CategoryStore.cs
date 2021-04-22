@@ -11,23 +11,23 @@ namespace Taazaa_Assignment2
             new Category()
             {
                 Category_ID = Category.IncreamentID(),
-                Category_Name="Grocery",
-                CategoryShortCode="101",
-                CategoryDescription="Well Satisfied"
+                Name="Grocery",
+                ShortCode="101",
+                Description="Well Satisfied"
             },
             new Category
             {
               Category_ID = Category.IncreamentID(),
-              Category_Name="Dairy",
-              CategoryShortCode="102",
-              CategoryDescription="Milk Products are here"
+              Name="Dairy",
+              ShortCode="102",
+              Description="Milk Products are here"
             },
             new Category
             {
                 Category_ID = Category.IncreamentID(),
-                Category_Name="Automobiles",
-                CategoryShortCode="103",
-                CategoryDescription="2 wheeler"
+                Name="Automobiles",
+                ShortCode="103",
+                Description="2 wheeler"
             }
 
         };

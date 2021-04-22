@@ -17,9 +17,9 @@ namespace Taazaa_Assignment2
                 {
 
                     Category_ID = Category.IncreamentID(),
-                    Category_Name = categoryName,
-                    CategoryShortCode = shortCode,
-                    CategoryDescription = desc
+                    Name = categoryName,
+                    ShortCode = shortCode,
+                    Description = desc
 
                 });
                 ListOfAllCategories();
@@ -29,7 +29,7 @@ namespace Taazaa_Assignment2
                 Console.WriteLine("Category Id" + "\t" + "Category Name" + "\t\t" + "Category Short Code" + "\t" + "Category Description\n");
                 categories.ForEach((i) =>
                 {
-                    Console.WriteLine($"{i.Category_ID} \t\t {i.Category_Name}\t\t {i.CategoryShortCode}\t\t{i.CategoryDescription}");
+                    Console.WriteLine($"{i.Category_ID} \t\t {i.Name}\t\t {i.ShortCode}\t\t{i.Description}");
                 });
             }
 
@@ -61,7 +61,7 @@ namespace Taazaa_Assignment2
             {
                 Console.WriteLine("Enter Short Code : ");
                 string shortcode = Console.ReadLine();
-                var producttoremove = categories.Single(r => r.CategoryShortCode == shortcode);
+                var producttoremove = categories.Single(r => r.ShortCode == shortcode);
                 categories.Remove(producttoremove);
             }
 
@@ -107,7 +107,7 @@ namespace Taazaa_Assignment2
                 {
                     d.ForEach((i) =>
                     {
-                        Console.WriteLine($"{i.Category_ID} \t\t {i.Category_Name}\t\t{i.CategoryShortCode}\t\t{i.CategoryDescription}");
+                        Console.WriteLine($"{i.Category_ID} \t\t {i.Name}\t\t{i.ShortCode}\t\t{i.Description}");
                     });
                 }
                 else
@@ -118,12 +118,12 @@ namespace Taazaa_Assignment2
             }
             public static void SearchByName(string name)
             {
-                var d = categories.FindAll((i) => i.Category_Name == name);
+                var d = categories.FindAll((i) => i.Name == name);
                 if (d.Count > 0)
                 {
                     d.ForEach((i) =>
                     {
-                        Console.WriteLine($"{i.Category_ID} \t\t {i.Category_Name}\t\t{i.CategoryShortCode}\t\t{i.CategoryDescription}");
+                        Console.WriteLine($"{i.Category_ID} \t\t {i.Name}\t\t{i.ShortCode}\t\t{i.Description}");
                     });
                 }
                 else
@@ -134,12 +134,12 @@ namespace Taazaa_Assignment2
             }
             public static void SearchByShortCode(string shortCode)
             {
-                var d = categories.FindAll((i) => i.CategoryShortCode == shortCode);
+                var d = categories.FindAll((i) => i.ShortCode == shortCode);
                 if (d.Count > 0)
                 {
                     d.ForEach((i) =>
                     {
-                        Console.WriteLine($"{i.Category_ID} \t\t {i.Category_Name}\t\t{i.CategoryShortCode}\t\t{i.CategoryDescription}");
+                        Console.WriteLine($"{i.Category_ID} \t\t {i.Name}\t\t{i.ShortCode}\t\t{i.Description}");
                     });
                 }
                 else
